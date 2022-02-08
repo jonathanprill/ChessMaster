@@ -14,14 +14,14 @@
 
 <body>
     <!-- header section starts-->
-    <header class="header">
+    <header class="header text-center">
         <h1>
-            <a href="/" id="CHESS-MASTER">CHESS sdfsdfdf MASTER</a>
+            <a href="/" id="CHESS-MASTER">CHESS MASTER</a>
         </h1>
         <!-- search bar and submit button section starts-->
-        <section id="search-bar">
-            <input type="text" placeholder="Search" id="search"/>
-            <button type="button" id="search-button">Submit</button>
+        <section class="grid-x" id="search-bar">
+            <input class="search-button cell small-8" type="text" placeholder="Search" id="search"/>
+            <button class="search-button button cell small-3" type="button" id="search-button">Submit</button>
         </section>
         <!-- search bar and submit button section ends-->
     </header>
@@ -44,30 +44,37 @@
         <!-- Profile pictures section ends-->
 
         <!-- Profile pop up starts here-->
-        <section id="profile-info">
-            <div class="info-container">
-
-            </div>
+        <section class="text-center" id="profile-info">
+            <div id="head-text"></div>
         </section>
+
+
+        <div class="grid-x">
+            <div class="cell small-6" id="profile-picture"></div>
+                <div class="cell small-6">
+                <div id="player-name"></div>
+                <div id="player-rating"></div>
+                </div>
+        </div>
         <!-- Profile pop up ends-->
+
+
 
         <!-- Chessboard section starts -->
         <section id="chessboard">
             <div>
-                <h1 id="Opening_1">Opening 1</h1>
+                <h1 id="opening-title"></h1>
             </div>
-            <div>
-                <h6 id="placeholder">placeholder</h6>
-            </div>
+            
             <div class="chessboard-img">
                 <article>
-                    <div class="my-board" id="myBoard" style="width: 45%"></div>
+                    <div class="my-board" id="myBoard"></div>
                 </article>
                 <div class="start-button">
-                    <button type="button">Start</button>
+                    <button type="button"></button>
                 </div>
                 <div class="hint-button">
-                    <button type="button">Hint</button>
+                    <button type="button"></button>
                 </div>
         </section>
         <!-- Chessboard section ends -->

@@ -2,6 +2,11 @@
 
 var topPlayersEl = document.querySelector("#top-players")
 var profileInfoEl = document.querySelector("#profile-info")
+var headTextEl = document.querySelector("#head-text")
+var profilePictureEl = document.querySelector("#profile-picture")
+var playerNameEl = document.querySelector("#player-name")
+var playerRatingEl = document.querySelector("#player-rating")
+var openingTitleEl = document.querySelector("#opening-title")
 var userArr = ['firouzja2003', 'hikaru', 'danielnaroditsky', 'magnuscarlsen', 'anishgiri', 'gothamchess']
 var APIUrl = ("https://api.chess.com/pub/player/");
 
@@ -13,6 +18,10 @@ var APIUrl = ("https://api.chess.com/pub/player/");
 //When Top Player Picture Clicked - runs displayPlayerInfo function
 $('img').click(function(e) {
     profileInfoEl.textContent = "";
+    headTextEl.textContent = "";
+    profilePictureEl.textContent = "";
+    playerNameEl.textContent = "";
+    playerRatingEl.textContent = "";
     var selectedPlayer = e.target.id
     displayPlayerInfo(selectedPlayer);
 });
@@ -39,46 +48,59 @@ var displayPlayerInfo = function(selectedPlayer) {
       let openingName = newArr[15]
       
         console.log(openingName)
+        //Displays Header
+        var headText = document.createElement('h2');
+        headText.innerHTML = "Players Most Used Openings";
+        headText.setAttribute("class", "opening-header")
+        profileInfoEl.append(headText);
 
         //searches text for opening names and then renders them on screen
         if (openingName.indexOf('Caro') > -1) {
           var btn = document.createElement('button');
           btn.innerHTML = "Caro-Kann";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playCaroKann)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Modern") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Modern Defense";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playModern)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Scotch") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Scotch";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playScotch)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Indian") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Kings Indian";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playKingsIndian)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Queens") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Queen's Gambit";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playQueensGambit)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Ruy") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Ruy Lopez";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playRuyLopez)
           profileInfoEl.append(btn);
         } else if (openingName.indexOf("Dutch") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Dutch";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playDutch)
           profileInfoEl.append(btn);
         }  else if (openingName.indexOf("Pirc") > -1) {
           var btn = document.createElement("button")
           btn.textContent = "Pirc Defense";
+          btn.setAttribute("class", "button opening-button")
           btn.addEventListener('click', playPirc)
           profileInfoEl.append(btn);
         } else {
@@ -86,6 +108,7 @@ var displayPlayerInfo = function(selectedPlayer) {
           currentEl.textContent = 'More Openings Coming Soon'
           profileInfoEl.append(currentEl);
         };
+        
     }); 
   });
 
@@ -105,41 +128,49 @@ fetch(requestElo).then(function(response) {
       if (openingName.indexOf('Caro') > -1) {
         var btn = document.createElement('button');
         btn.innerHTML = "Caro-Kann";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playCaroKann)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Modern") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Modern Defense";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playModern)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Scotch") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Scotch";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playScotch)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Indian") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Kings Indian";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playKingsIndian)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Queens") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Queen's Gambit";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playQueensGambit)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Ruy") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Ruy Lopez";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playRuyLopez)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Dutch") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Dutch";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playDutch)
         profileInfoEl.append(btn);
       }  else if (openingName.indexOf("Pirc") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Pirc Defense";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playPirc)
         profileInfoEl.append(btn);
       } else {
@@ -166,41 +197,49 @@ fetch(requestElo).then(function(response) {
       if (openingName.indexOf('Caro') > -1) {
         var btn = document.createElement('button');
         btn.innerHTML = "Caro-Kann";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playCaroKann)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Modern") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Modern Defense";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playModern)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Scotch") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Scotch";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playScotch)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Indian") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Kings Indian";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playKingsIndian)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Queens") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Queen's Gambit";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playQueensGambit)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Ruy") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Ruy Lopez";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playRuyLopez)
         profileInfoEl.append(btn);
       } else if (openingName.indexOf("Dutch") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Dutch";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playDutch)
         profileInfoEl.append(btn);
       }  else if (openingName.indexOf("Pirc") > -1) {
         var btn = document.createElement("button")
         btn.textContent = "Pirc Defense";
+        btn.setAttribute("class", "button opening-button")
         btn.addEventListener('click', playPirc)
         profileInfoEl.append(btn);
       } else {
@@ -222,12 +261,14 @@ fetch(requestElo).then(function(response) {
         var currentIconEl = document.createElement("img")
         //currentIconEl.setAttribute("id", "firouzja2003")
         currentIconEl.src = data.avatar
-        profileInfoEl.append(currentIconEl)
+        currentIconEl.setAttribute("class", "player-picture")
+        profilePictureEl.append(currentIconEl)
 
         //Displays Username
         var currentEl = document.createElement("h2")
         currentEl.textContent = data.name
-        profileInfoEl.append(currentEl);
+        currentEl.setAttribute("class", "player-bio-name")
+        playerNameEl.append(currentEl);
     }); 
   });
 
@@ -240,17 +281,20 @@ fetch(requestElo).then(function(response) {
         //Displays Rapid Chess Rating
         var currentEl = document.createElement("p")
         currentEl.textContent = 'Rapid Chess Rating: ' + data.chess_rapid.last.rating
-        profileInfoEl.append(currentEl);
+        currentEl.setAttribute("class", "player-bio")
+        playerRatingEl.append(currentEl);
 
         //Displays Bullet Chess Rating
         var currentEl = document.createElement("p")
         currentEl.textContent = 'Bullet Chess Rating: ' + data.chess_bullet.last.rating
-        profileInfoEl.append(currentEl);
+        currentEl.setAttribute("class", "player-bio")
+        playerRatingEl.append(currentEl);
 
         //Displays Blitz Chess Rating
         var currentEl = document.createElement("p")
         currentEl.textContent = 'Blitz Chess Rating: ' + data.chess_blitz.last.rating
-        profileInfoEl.append(currentEl); 
+        currentEl.setAttribute("class", "player-bio")
+        playerRatingEl.append(currentEl); 
     });    
   });
 };
@@ -260,6 +304,12 @@ fetch(requestElo).then(function(response) {
 ///////////////////Chessboard Opening Functions///////////////////
 
 var playScotch = function (APIconfigFiller, newPos) {
+  
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = 'Practicing the Scotch'
+  openingTitleEl.replaceChildren(titleEl); 
+
 
   var config = {
     orientation: 'black',
@@ -307,6 +357,11 @@ var playScotch = function (APIconfigFiller, newPos) {
 
 var playQueensGambit = function (APIconfigFiller, newPos) {
 
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Queen's Gambit"
+  openingTitleEl.replaceChildren(titleEl); 
+
   var config = {
     draggable: true,
     position: 'start',
@@ -352,6 +407,12 @@ var playQueensGambit = function (APIconfigFiller, newPos) {
 
 var playCaroKann = function (APIconfigFiller, newPos) {
 
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Caro-Kann"
+  openingTitleEl.replaceChildren(titleEl); 
+
+
   var config = {
     orientation: 'black',
     draggable: true,
@@ -386,6 +447,12 @@ var playCaroKann = function (APIconfigFiller, newPos) {
 };
 
 var playModern = function (APIconfigFiller, newPos) {
+
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Modern Defense"
+  openingTitleEl.replaceChildren(titleEl); 
+
 
   var config = {
     orientation: 'black',
@@ -423,6 +490,12 @@ var playModern = function (APIconfigFiller, newPos) {
 
 
 var playKingsIndian = function (APIconfigFiller, newPos) {
+
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the King's Indian"
+  openingTitleEl.replaceChildren(titleEl); 
+
 
   var config = {
     orientation: 'black',
@@ -469,6 +542,12 @@ var playKingsIndian = function (APIconfigFiller, newPos) {
 
 var playRuyLopez = function (APIconfigFiller, newPos) {
 
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Ruy Lopez"
+  openingTitleEl.replaceChildren(titleEl); 
+
+
   var config = {
    //orientation: 'black',
     draggable: true,
@@ -505,6 +584,12 @@ var playRuyLopez = function (APIconfigFiller, newPos) {
 
 
 var playDutch = function (APIconfigFiller, newPos) {
+
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Dutch"
+  openingTitleEl.replaceChildren(titleEl); 
+
 
   var config = {
     orientation: 'black',
@@ -551,6 +636,12 @@ var playDutch = function (APIconfigFiller, newPos) {
 
 
 var playPirc = function (APIconfigFiller, newPos) {
+
+  //Displays the current opening name
+  var titleEl = document.createElement("h3")
+  titleEl.textContent = "Practicing the Pirc"
+  openingTitleEl.replaceChildren(titleEl); 
+
 
   var config = {
     //orientation: 'black',
