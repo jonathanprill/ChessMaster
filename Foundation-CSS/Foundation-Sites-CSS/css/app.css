@@ -22,21 +22,21 @@
     /* text-decoration: underline;
     text-decoration-color: #333; */
 }
-#search-bar {
+/* #search-bar {
     position: absolute;
     right: 800px;
     top: 20px;
     width: auto;
     height: auto;
-}
-#search-button {
+} */
+/* #search-button {
     position:absolute;
     left:760px;
     bottom: 0px;
 }
 #search {
     width: 450%;
-}
+} */
 #profile-scroll {
     /* background-color: black; */
     overflow: auto;
