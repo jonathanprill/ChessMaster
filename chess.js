@@ -24,7 +24,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  *----------------------------------------------------------------------------*/
-
+// TEST
 var Chess = function (fen) {
   var BLACK = 'b'
   var WHITE = 'w'
