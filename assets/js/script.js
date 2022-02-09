@@ -1,4 +1,4 @@
-//Global Variables
+//Global Variables TEST PUSH
 
 var topPlayersEl = document.querySelector("#top-players")
 var profileInfoEl = document.querySelector("#profile-info")
